@@ -10,7 +10,7 @@
     android:layout_marginTop="4dp"
     android:layout_marginRight="8dp"
     android:layout_marginBottom="4dp"
-    android:backgroundTint="@color/primary_light"
+    android:backgroundTint="@color/primary_dark"
     app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,8 +42,7 @@
             android:typeface="monospace"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/img_destination"
-            android:text="@string/intro"/>
+            app:layout_constraintStart_toEndOf="@id/img_destination"/>
 
         <ImageButton
             android:id="@+id/btn_detail"
