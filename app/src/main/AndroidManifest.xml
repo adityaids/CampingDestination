@@ -11,8 +11,8 @@
         android:theme="@style/Theme.CampingDestination">
         <activity android:name=".AboutActivity"></activity>
         <activity android:name=".DetailActivity" />
-        <activity android:name=".IntroActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
