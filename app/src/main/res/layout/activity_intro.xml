@@ -36,8 +36,9 @@
         android:textStyle="bold"
         android:typeface="monospace"
         android:textColor="@android:color/white"
+        android:fontFamily="@font/roboto_medium"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,5 +51,6 @@
         android:text="@string/intro"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        android:typeface="sans"/>
+        android:typeface="sans"
+        android:fontFamily="@font/roboto_medium"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
