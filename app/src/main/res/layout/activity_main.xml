@@ -41,11 +41,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:paddingBottom="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_sub_title"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="24dp"
         tools:listitem="@layout/card_destination"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
