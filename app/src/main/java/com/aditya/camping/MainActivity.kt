@@ -1,15 +1,18 @@
 package com.aditya.camping
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aditya.camping.model.DataPlace
+import com.aditya.camping.model.DestinationAdapter
 import com.aditya.camping.model.ModelPlace
-import java.util.ArrayList
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var listDestination: ArrayList<ModelPlace>
+    private var listDestination: ArrayList<ModelPlace> = arrayListOf()
     private lateinit var rvMain: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +23,17 @@ class MainActivity : AppCompatActivity() {
         rvMain.setHasFixedSize(true)
 
         listDestination.addAll(DataPlace.listData)
+        showRecyclerView()
+    }
 
+    private fun showRecyclerView(){
+        rvMain.layoutManager = LinearLayoutManager(this)
+        val listDestinationAdapter = DestinationAdapter(listDestination)
+        rvMain.adapter = listDestinationAdapter
+        listDestinationAdapter.setOnItemClickCallback(object: DestinationAdapter.OnItemClickCallBack{
+            override fun onItemClicked(data: ModelPlace) {
+                startActivity(Intent(this@MainActivity, DetailActivity::class.java))
+            }
+        })
     }
 }

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -14,15 +15,15 @@ import java.util.ArrayList
 class DestinationAdapter(private val listDestination: ArrayList<ModelPlace>): RecyclerView.Adapter<DestinationAdapter.DestinationViewHolder>() {
     private lateinit var onItemClickedCallback: OnItemClickCallBack
 
+    fun setOnItemClickCallback(onItemClickedCallback: OnItemClickCallBack){
+        this.onItemClickedCallback = onItemClickedCallback
+    }
+
     inner class DestinationViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.findViewById(R.id.tv_name)
         var tvDescription: TextView = itemView.findViewById(R.id.tv_description)
-        var btnDetail: Button = itemView.findViewById(R.id.btn_detail)
+        var btnDetail: ImageButton = itemView.findViewById(R.id.btn_detail)
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_destination)
-    }
-
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallBack){
-        this.onItemClickedCallback = onItemClickedCallback
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DestinationViewHolder {
