@@ -32,7 +32,10 @@ class MainActivity : AppCompatActivity() {
         rvMain.adapter = listDestinationAdapter
         listDestinationAdapter.setOnItemClickCallback(object: DestinationAdapter.OnItemClickCallBack{
             override fun onItemClicked(data: ModelPlace) {
-                startActivity(Intent(this@MainActivity, DetailActivity::class.java))
+                val intent = Intent(this@MainActivity, DetailActivity::class.java).apply {
+                    putExtra(DetailActivity.EXTRA_DESTINATION, data)
+                }
+                startActivity(intent)
             }
         })
     }
