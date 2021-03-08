@@ -2,16 +2,13 @@ package com.aditya.camping
 
 import android.content.Intent
 import android.os.Bundle
-import android.transition.Transition
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
 import com.aditya.camping.model.ModelPlace
 import com.bumptech.glide.Glide
 
@@ -23,11 +20,11 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener{
         const val EXTRA_IMAGE_TRANSITION: String = "IMAGE_DESTINATION"
         const val EXTRA_TITLE_TRANSITION: String = "TEXT_TITLE"
     }
-    lateinit var tvDetailName: TextView
-    lateinit var tvDetailDescription: TextView
-    lateinit var imgDetail: ImageView
-    lateinit var btnFavorit: Button
-    lateinit var btnShare: Button
+    private lateinit var tvDetailName: TextView
+    private lateinit var tvDetailDescription: TextView
+    private lateinit var imgDetail: ImageView
+    private lateinit var btnFavorit: Button
+    private lateinit var btnShare: Button
     private lateinit var destination: ModelPlace
 
     override fun onCreate(savedInstanceState: Bundle?) {
