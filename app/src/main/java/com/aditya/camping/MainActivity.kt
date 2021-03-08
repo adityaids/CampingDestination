@@ -1,8 +1,16 @@
 package com.aditya.camping
 
+import android.app.ActivityOptions
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Pair
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aditya.camping.model.DataPlace
@@ -31,11 +39,20 @@ class MainActivity : AppCompatActivity() {
         val listDestinationAdapter = DestinationAdapter(listDestination)
         rvMain.adapter = listDestinationAdapter
         listDestinationAdapter.setOnItemClickCallback(object: DestinationAdapter.OnItemClickCallBack{
-            override fun onItemClicked(data: ModelPlace) {
+            override fun onItemClicked(data: ModelPlace, imageView: View, title: View) {
+                val imagePair = Pair.create(imageView, "IMAGE_DESTINATION")
+                val titlePair = Pair.create(title, "TEXT_TITLE")
+
                 val intent = Intent(this@MainActivity, DetailActivity::class.java).apply {
                     putExtra(DetailActivity.EXTRA_DESTINATION, data)
                 }
-                startActivity(intent)
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    val activityOption = ActivityOptions.makeSceneTransitionAnimation(this@MainActivity, imagePair, titlePair)
+                    startActivity(intent, activityOption.toBundle())
+                } else {
+                    startActivity(intent)
+                }
             }
         })
     }
