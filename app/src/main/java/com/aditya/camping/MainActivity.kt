@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
         rvMain.adapter = listDestinationAdapter
         listDestinationAdapter.setOnItemClickCallback(object: DestinationAdapter.OnItemClickCallBack{
             override fun onItemClicked(data: ModelPlace, imageView: View, title: View) {
-                val imagePair = Pair.create(imageView, "IMAGE_DESTINATION")
-                val titlePair = Pair.create(title, "TEXT_TITLE")
+                val imagePair = Pair.create(imageView, DetailActivity.EXTRA_IMAGE_TRANSITION)
+                val titlePair = Pair.create(title, DetailActivity.EXTRA_TITLE_TRANSITION)
 
                 val intent = Intent(this@MainActivity, DetailActivity::class.java).apply {
                     putExtra(DetailActivity.EXTRA_DESTINATION, data)

@@ -16,7 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:transitionName="IMAGE_DESTINATION"
         tools:src="@drawable/belitung"/>
 
     <ImageView
@@ -40,7 +39,6 @@
         android:textSize="36sp"
         android:textColor="@android:color/white"
         android:fontFamily="@font/roboto_medium"
-        android:transitionName="TEXT_TITLE"
         tools:text="Belitung"/>
 
     <TextView
@@ -63,7 +61,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginBottom="16dp"
-        android:drawableLeft="@drawable/ic_favorite_border"
+        app:icon="@drawable/ic_favorite_border"
         android:text="@string/favorit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -75,7 +73,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="16dp"
-        android:drawableLeft="@drawable/ic_share"
+        app:icon="@drawable/ic_share"
         android:text="@string/share"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
