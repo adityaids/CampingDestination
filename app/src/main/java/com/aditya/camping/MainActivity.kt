@@ -6,6 +6,8 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Pair
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -32,6 +34,19 @@ class MainActivity : AppCompatActivity() {
 
         listDestination.addAll(DataPlace.listData)
         showRecyclerView()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.action_menu) {
+            val intent = Intent(this@MainActivity, AboutActivity::class.java)
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun showRecyclerView(){
