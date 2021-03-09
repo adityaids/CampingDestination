@@ -7,4 +7,11 @@
     <string name="favorit">Favorit</string>
     <string name="share">Share</string>
     <string name="about">About</string>
+    <string name="myname">Aditya Purnama</string>
+    <string name="instagram">Adityaids</string>
+    <string name="aditya_purnama">Aditya Purnama</string>
+    <string name="bio">Bio</string>
+    <string name="bio_description">My name is Aditya Purnama, i am final year student at Sekolah Tinggi Teknologi Bandung
+        and currently my GPA is 2.9. I love playing game especially puzzle games and adventure games since i was in elementary school, and i think that is the reason why i love programming especially in android,
+        because when i play puzzle game i need to solve the problem to finish it and in programming it is also like that too</string>
 </resources>
