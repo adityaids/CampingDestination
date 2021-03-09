@@ -19,6 +19,7 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener{
         const val EXTRA_DESTINATION: String = "extra_destination"
         const val EXTRA_IMAGE_TRANSITION: String = "IMAGE_DESTINATION"
         const val EXTRA_TITLE_TRANSITION: String = "TEXT_TITLE"
+        const val EXTRA_FRAME_TRANSITION: String = "FRAME_TRANSITION"
     }
     private lateinit var tvDetailName: TextView
     private lateinit var tvDetailDescription: TextView

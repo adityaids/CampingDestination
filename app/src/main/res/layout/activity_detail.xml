@@ -20,12 +20,14 @@
         tools:src="@drawable/belitung"/>
 
     <ImageView
+        android:id="@+id/img_frame"
         android:layout_width="match_parent"
         android:layout_height="280dp"
         app:layout_constraintStart_toStartOf="@+id/img_detail"
         app:layout_constraintEnd_toEndOf="@+id/img_detail"
         app:layout_constraintTop_toTopOf="@+id/img_detail"
         app:layout_constraintBottom_toBottomOf="@+id/img_detail"
+        android:transitionName="FRAME_TRANSITION"
         tools:src="@drawable/gradient_image"/>
 
     <TextView

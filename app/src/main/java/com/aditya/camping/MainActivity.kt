@@ -54,16 +54,17 @@ class MainActivity : AppCompatActivity() {
         val listDestinationAdapter = DestinationAdapter(listDestination)
         rvMain.adapter = listDestinationAdapter
         listDestinationAdapter.setOnItemClickCallback(object: DestinationAdapter.OnItemClickCallBack{
-            override fun onItemClicked(data: ModelPlace, imageView: View, title: View) {
+            override fun onItemClicked(data: ModelPlace, imageView: View, title: View, frame: View) {
                 val imagePair = Pair.create(imageView, DetailActivity.EXTRA_IMAGE_TRANSITION)
                 val titlePair = Pair.create(title, DetailActivity.EXTRA_TITLE_TRANSITION)
+                val framePair = Pair.create(frame, DetailActivity.EXTRA_FRAME_TRANSITION)
 
                 val intent = Intent(this@MainActivity, DetailActivity::class.java).apply {
                     putExtra(DetailActivity.EXTRA_DESTINATION, data)
                 }
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    val activityOption = ActivityOptions.makeSceneTransitionAnimation(this@MainActivity, imagePair, titlePair)
+                    val activityOption = ActivityOptions.makeSceneTransitionAnimation(this@MainActivity, imagePair, titlePair, framePair)
                     startActivity(intent, activityOption.toBundle())
                 } else {
                     startActivity(intent)
