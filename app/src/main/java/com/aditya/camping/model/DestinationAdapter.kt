@@ -23,7 +23,6 @@ class DestinationAdapter(private val listDestination: ArrayList<ModelPlace>): Re
         var tvDescription: TextView = itemView.findViewById(R.id.tv_description)
         var btnDetail: ImageButton = itemView.findViewById(R.id.btn_detail)
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_destination)
-        var imgFrame: ImageView = itemView.findViewById(R.id.img_frame)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DestinationViewHolder {
@@ -42,14 +41,14 @@ class DestinationAdapter(private val listDestination: ArrayList<ModelPlace>): Re
         holder.tvName.text = destination.name
         holder.tvDescription.text = destination.description
         holder.itemView.setOnClickListener{
-            onItemClickedCallback.onItemClicked(listDestination[holder.adapterPosition], holder.imgPhoto, holder.tvName, holder.imgFrame)
+            onItemClickedCallback.onItemClicked(listDestination[holder.adapterPosition], holder.imgPhoto, holder.tvName)
         }
         holder.btnDetail.setOnClickListener {
-            onItemClickedCallback.onItemClicked(listDestination[holder.adapterPosition], holder.imgPhoto, holder.tvName, holder.imgFrame)
+            onItemClickedCallback.onItemClicked(listDestination[holder.adapterPosition], holder.imgPhoto, holder.tvName)
         }
     }
 
     interface OnItemClickCallBack{
-        fun onItemClicked(data: ModelPlace, imageView: View, title: View, frame: View)
+        fun onItemClicked(data: ModelPlace, imageView: View, title: View)
     }
 }
