@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_menu) {
+        if (item.itemId == R.id.action_about) {
             val intent = Intent(this@MainActivity, AboutActivity::class.java)
             startActivity(intent)
         }

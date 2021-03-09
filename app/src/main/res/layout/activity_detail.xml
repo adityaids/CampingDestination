@@ -37,7 +37,7 @@
         android:textSize="36sp"
         android:textColor="@android:color/white"
         android:fontFamily="@font/roboto_medium"
-        android:background="#4D000000"
+        android:background="#80000000"
         android:transitionName="TEXT_TITLE"
         tools:text="Belitung"/>
 
