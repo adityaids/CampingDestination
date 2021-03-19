@@ -41,10 +41,10 @@ class DestinationAdapter(private val listDestination: ArrayList<ModelPlace>): Re
         holder.tvName.text = destination.name
         holder.tvDescription.text = destination.description
         holder.itemView.setOnClickListener{
-            onItemClickedCallback.onItemClicked(listDestination[holder.adapterPosition], holder.imgPhoto, holder.tvName)
+            onItemClickedCallback.onItemClicked(destination, holder.imgPhoto, holder.tvName)
         }
         holder.btnDetail.setOnClickListener {
-            onItemClickedCallback.onItemClicked(listDestination[holder.adapterPosition], holder.imgPhoto, holder.tvName)
+            onItemClickedCallback.onItemClicked(destination, holder.imgPhoto, holder.tvName)
         }
     }
 
